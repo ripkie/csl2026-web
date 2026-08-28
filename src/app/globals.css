@@ -538,6 +538,154 @@ svg {
 }
 
 /* =========================
+   SIMULATION FORM
+========================= */
+
+.simulation-section {
+  margin-top: 24px;
+  padding: 26px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.sim-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sim-unit {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.sim-input-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.sim-input-wrap input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fbfaf6;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sim-input-wrap input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* hide native number spinners, we use our own stepper */
+.sim-input-wrap input::-webkit-outer-spin-button,
+.sim-input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.sim-input-wrap input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sim-stepper {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sim-stepper button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  border: none;
+  background: #fbfaf6;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sim-stepper button:first-child {
+  border-right: 1px solid var(--border);
+}
+
+.sim-stepper button:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.sim-note {
+  margin: 16px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.sim-submit-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sim-submit-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================
+   WARNING STATE VARIANTS
+========================= */
+
+.quality-status-warn {
+  border-color: #ffe0b2;
+  background: linear-gradient(135deg, #fff8ec, #ffffff);
+}
+
+.quality-status-warn .quality-icon {
+  background: var(--warning);
+}
+
+.quality-status-warn .quality-label,
+.quality-status-warn .quality-info h3 {
+  color: #b57d00;
+}
+
+.normal-badge.warn {
+  background: #fff3e0;
+  color: #b57d00;
+}
+
+.analysis-icon.warn {
+  background: #fff3e0;
+  color: var(--warning);
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -553,6 +701,10 @@ svg {
 
   .section-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sim-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -622,6 +774,19 @@ svg {
 
   .parameter-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sim-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simulation-section {
+    padding: 18px;
+  }
+
+  .sim-submit-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .quality-status {
