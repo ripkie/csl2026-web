@@ -859,4 +859,17 @@ svg {
     padding: 9px 12px;
     font-size: 12px;
   }
+
+  .simulation-section {
+    padding: 14px;
+  }
+
+  .sim-input-wrap input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .sim-stepper button {
+    width: 30px;
+  }
 }
